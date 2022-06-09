@@ -15,11 +15,7 @@ print_lock = threading.Lock()
 
 
 def handler(conn):
-    while True:
         request = conn.recv(4096).decode()
-        print(request == "")
-        if not request:
-            break
         # print(request)
 
         # parse the request header from client
@@ -37,7 +33,7 @@ def handler(conn):
         if filename == "":
             filename = "/"
         
-        print("Requesting for {}".format(hostn+filename))
+        print("Requesting for {} ----{}".format(hostn+filename))
 
         content = fetch_file(hostn,filename)
 
@@ -47,21 +43,22 @@ def handler(conn):
             response = 'HTTP/1.0 404 NOT FOUND\n\n File Not Found'.encode()
         
         conn.sendall(response)
-    print(111) 
-    conn.close()      
+        conn.close()    
 
 
 def main():
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind((HOST,PORT))
-        s.listen(5)
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
+        server.bind((HOST,PORT))
+        server.listen(5)
         print("Server is listening...")
         while True:
-            conn,addr = s.accept()
+            conn,addr = server.accept()
             print("Connected by {}".format(addr))
 
             cthread = threading.Thread(target = handler, args=(conn,))
             cthread.start()
+
+
         s.close()
             
 
