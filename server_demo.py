@@ -1,6 +1,9 @@
 import os
 import time 
 import socket
+
+from _thread import *
+import threading
 from http.client import HTTPResponse
 from datetime import datetime, timedelta
 
@@ -8,46 +11,59 @@ GMT_FORMAT =  "%a, %d %b %Y %H:%M:%S\n"
 HOST = "127.0.0.1"
 PORT = 65432
 FRESH_WHEN = 20
+print_lock = threading.Lock()
+
+
+def handler(conn):
+    while True:
+        request = conn.recv(4096).decode()
+        print(request == "")
+        if not request:
+            break
+        # print(request)
+
+        # parse the request header from client
+        headers = request.split('\n')
+        dest = headers[0].split()[1].replace('\n', '').replace('\r', '')
+        # print("dest",dest)
+
+        # hostname
+        hostn = dest.split('/')[1]
+        # print("host",hostn)
+        
+        #pathname
+        filename = dest[dest.find(hostn,1)+len(hostn):]
+
+        if filename == "":
+            filename = "/"
+        
+        print("Requesting for {}".format(hostn+filename))
+
+        content = fetch_file(hostn,filename)
+
+        if content:
+            response = "HTTP/1.0 200 OK\n\n".encode()+content
+        else:
+            response = 'HTTP/1.0 404 NOT FOUND\n\n File Not Found'.encode()
+        
+        conn.sendall(response)
+    print(111) 
+    conn.close()      
+
 
 def main():
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((HOST,PORT))
-        s.listen()
+        s.listen(5)
+        print("Server is listening...")
         while True:
-           
             conn,addr = s.accept()
             print("Connected by {}".format(addr))
-            request = conn.recv(4096).decode()
-            if not request:
-                break
-            # print(request)
 
-            # parse the request header from client
-            headers = request.split('\n')
-            dest = headers[0].split()[1].replace('\n', '').replace('\r', '')
-            # print("dest",dest)
-
-            # hostname
-            hostn = dest.split('/')[1]
-            # print("host",hostn)
+            cthread = threading.Thread(target = handler, args=(conn,))
+            cthread.start()
+        s.close()
             
-            #pathname
-            filename = dest[dest.find(hostn,1)+len(hostn):]
-
-            if filename == "":
-                filename = "/"
-            
-            print("Requesting for {}".format(hostn+filename))
-
-            content = fetch_file(hostn,filename)
-
-            if content:
-                response = "HTTP/1.0 200 OK\n\n".encode()+content
-            else:
-                response = 'HTTP/1.0 404 NOT FOUND\n\n File Not Found'.encode()
-            
-            conn.sendall(response)
-            print("\n")            
 
 def fetch_file(hostn,filename):
     file_from_cache= fetch_from_cache(hostn+filename)
