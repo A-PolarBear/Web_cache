@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28692444-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28692444-3');
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Yi Zhang - Homepage</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<!-- <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js?ver=3.3"></script>	 -->
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
+
+</head>
+
+<body>
+<div id=topBox>
+    <div id="header">
+        <div id="logo"><a href="#"><img width="100%" src="images/title.png"></a></div>
+        <ul id="main-menu">
+			<!-- <li class='click-bt'><a href="#about">About</a></li>
+			<li class='click-bt'><a href="#education">Education</a></li>  
+            <li class='click-bt'><a href="#news">Talks</a></li>
+            <li class='click-bt'><a href="#publication">Publications</a></li>
+            <li class='click-bt'><a href="#course">Team</a></li>
+			<li><a href="index_Chinese.html">中文</a></li> -->
+			<li><a href="" class='click-bt'>About</a></li>
+			<li><a href="" class='click-bt'>Education&Experiences</a></li>  
+            <li><a href="" class='click-bt'>Talks</a></li>
+            <li><a href="" class='click-bt'>Publications</a></li>
+            <li><a href="" class='click-bt'>Team</a></li>
+			<li><a href="" class='click-bt'>Contact</a></li>
+            <!-- <li><a href="index_Chinese.html">中文</a></li> -->
+        </ul>
+    </div>
+</div>
+
+
+<div id="container">
+
+<!--Begin About Section-->
+    <div class='click-content show' id="about">
+    	<h1>About</h1>
+        <ul id="top-social">
+        	<li><a href="http://cs.scu.edu.cn/info/1121/9354.htm" class="scholar">Google Scholar</a></li>
+            <li><a href="https://github.com/orgs/Deep-Imaging-Group/teams" class="github">Github</a></li>
+            <!-- <li><a href="http://www.linkedin.com/pub/bihan-wen/30/754/b32" class="linkedin">LinkedIn</a></li> -->
+            <!-- <li><a href="https://www.researchgate.net/profile/Bihan_Wen" class="researchGate">Research Gate</a></li> -->
+        </ul>
+        <div class="top-divider"></div>
+        <div class="content">
+		<script type="text/javascript">
+			
+			 var imlocation = "images/";
+			 var currentdate = 0;
+			 var image_number = 0;
+			 function ImageArray (n) {
+			   this.length = n;
+			   for (var i =1; i <= n; i++) {
+				 this[i] = ' '
+			   }
+			 }
+			 //image = new ImageArray(8)
+			 image = new ImageArray(1)
+			 image[0] = 'zhangyi.jpg'
+			 image[1] = '.jpg'
+			 //image[2] = 'photo_2015b.JPG'
+			 //image[3] = 'photo_2014b.jpg'
+			 //image[4] = 'photo_2014c.jpg'
+			 //image[5] = 'photo_2010a.jpg'
+			 //image[6] = 'photo.jpg.jpg'
+			 //image[7] = 'photo_2013a.jpg'
+			 var rand = 60/image.length
+			 function randomimage() {
+				currentdate = new Date()
+				image_number = currentdate.getSeconds()
+				image_number = Math.floor(image_number/rand)
+				return(image[image_number])
+			 }
+			 document.write("<img src='" + imlocation + randomimage()+ "' width='230'>");
+			//-->
+			</script>
+        	<!--<img src="images/photo.jpg" />
+			//-->
+            <p><h2>Yi Zhang</h2></p> 
+			<!--<p>&nbsp;</p> -->
+			<p><h3>Professor</p>
+			<p><h3><a href="http://cs.scu.edu.cn/">College of Computer Science</a></p>			
+			<p><a href="http://www.scu.edu.cn/"> Sichuan University (SCU)</a></p>
+			<p><a>Chengdu,Sichuan 610065</a></h3></p>
+			<!-- <p><h3>PhD 12', <a href="http://cs.scu.edu.cn//"> Computer Science and Technology</a>, <a href="http://www.scu.edu.cn//">Sichuan University, Chengdu </a></h3></p>
+			<p><h3>MS 08', <a href="http://cs.scu.edu.cn/x"> Computer Software and theory</a>, <a href="http://www.scu.edu.cn//">Sichuan University, Chengdu</a></a></h3></p>  			
+			<p><h3> BE 05', <a href="http://cs.scu.edu.cn//"> Computer Science and Technology</a>, <a href="http://www.scu.edu.cn//">Sichuan University, Chengdu </a></h3></p> 			 -->
+			<p><h3>Email: yzhang@scu.edu.cn or yizhang.scu@outlook.com</p> 
+			<p>
+			<h3>
+				My major research techniques and interests include the following.
+			<!-- </p>
+			<p> -->
+				<ul class="interests">
+					<li>- Compressed sensing for biomedical imaging application</li>
+					<li>- Deep learning for medical imaging</li>
+					<li>- CT/PET/MRI reconstruction algorithms</li>
+					<li>- Low level vision computing</li>
+					<li>- Variational PDEs for image processing</li>
+				</ul>
+			</h3></p>
+		</div>
+	<div class="bottom-divider"></div> 
+
+	<!-- 更新新闻，直接添加单元格 -->
+	<h2>News</h2>
+	<div class="top-divider"></div>
+	<table id="teamNews">
+		<tbody>
+			<tr>
+				<td class="date">April  2022</td>
+				<td class="event">One paper was accepted for Precision Clinical Medicine. </td>
+			</tr> 
+			<tr>
+				<td class="date">April  2022</td>
+				<td class="event">One paper was accepted for IEEE Transactions on Radiation and Plasma Medical Sciences. </td>
+			</tr> 
+			<tr>
+				<td class="date">March  2022</td>
+				<td class="event">One paper was accepted for Physics in Medicine and Biology. </td>
+			</tr> 
+			<tr>
+				<td class="date">March  2022</td>
+				<td class="event">One paper was accepted for IEEE Transactions on Neural Networks and Learning Systems. </td>
+			</tr>
+			<tr>
+				<td class="date">March  2022</td>
+				<td class="event">One paper was accepted for Patterns. </td>
+			</tr>
+			<tr>
+				<td class="date">March  2022</td>
+				<td class="event">One paper was accepted for IEEE Transactions on Medical Imaging. </td>
+			</tr>
+			<tr>
+				<td class="date">January  2022</td>
+				<td class="event">Three papers were accepted for 2022 IEEE International Symposium on Biomedical Imaging(ISBI). </td>
+			</tr> 
+			<tr>
+				<td class="date">January  2022</td>
+				<td class="event">One paper was accepted for IEEE Transactions on Radiation and Plasma Medical Sciences. </td>
+			</tr> 
+			<tr>
+				<td class="date">December  2021</td>
+				<td class="event">One paper was accepted for International Journal of Legal Medicine. </td>
+			</tr>
+			<tr>
+				<td class="date">December  2021</td>
+				<td class="event">One paper was accepted for IEEE Transactions on Geoscience and Remote Sensing. </td>
+			</tr>
+			<tr>
+				<td class="date">November 2021</td>
+				<td class="event">One paper was accepted for IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing. </td>
+			</tr>
+			<tr>
+				<td class="date">November 2021</td>
+				<td class="event">One paper was accepted for IEEE Transactions on Instrumentation & Measurement. </td>
+			</tr>
+			<tr>
+				<td class="date">October 2021</td>
+				<td class="event">One paper was accepted for IEEE Transactions on Multimedia. </td>
+			</tr>
+			<tr>
+				<td class="date">September 2021</td>
+				<td class="event">One paper was accepted for International Journal of Electrical Power and Energy Systems. </td>
+			</tr>
+			<tr>
+				<td class="date">July 2021</td>
+				<td class="event">One paper was accepted for Physics in Medicine and Biology.</td>
+			</tr>
+			<tr>
+				<td class="date">May 2021</td>
+				<td class="event">Two papers were accepted for IEEE Transactions on Medical Imaging.</td>
+			</tr>
+			<tr>
+				<td class="date">May 2021</td>
+				<td class="event">One paper was accepted for MICCAI 2021.</td>
+			</tr>
+
+		</tbody>
+	</table>
+	<div class="bottom-divider"></div> 
+    </div>
+<!--End About Section-->
+<!--Begin Education Section-->
+	<div class='click-content' id="education">
+		<h1>Education</h1>
+		<div class="top-divider"></div>
+		<div class="content">
+			<li><p><h3>PhD, June 2012, Major: Computer Science and Technology</h3></p></li>
+			<p><h3>College of Computer Science, Sichuan University, Chengdu, Sichuan</h3></p>
+			<p><h3>Research field: Image processing, especially medical image processing</h3></p>
+
+			<li><p><h3>MS, July 2008, Major: Computer Software and theory</h3></p></li>
+			<p>
+				<h3>College of Computer Science, Sichuan University, Chengdu, Sichuan</h3>
+				<h3>Research field: ERP, EAI, Workflow, Web service</h3>
+			</p>
+
+			<li><p><h3>BS, July 2005, Major: Computer Science and Technology</h3></p></li>
+			<p><h3>College of Computer Science, Sichuan University, Chengdu, Sichuan</h3></p>  			
+		</div>
+	<div class="bottom-divider"></div> 
+	
+	<h1>Experience</h1>
+	<div class="top-divider"></div>
+	<p><h3>July 2020 – now, Professor, College of Computer Science, Sichuan University, Chengdu, Sichuan, China</h3></p>
+	<p><h3>July 2014 – June 2020, Associate Professor, College of Computer Science, Sichuan University, Chengdu, Sichuan, China</h3></p>
+	<p><h3>February 2014 – February 2015, Post-Doc, Department of Biomedical Engineering, Rensselaer Polytechnic Institute, Troy, NY, USA</h3>
+	</p>
+	<p><h3>July 2012 – June 2014, Assistant Professor, College of Computer Science, Sichuan University, Chengdu, Sichuan, China</h3></p>
+	<div class="bottom-divider"></div> 
+	</div> 
+<!--End Education Section
+<!-- Begin News Section -->
+    <div class='click-content' id="talks">
+    	<h1>Invited talks</h1>
+        <div class="top-divider"></div>
+        <div class="content">
+			<!--<li><p><h3> Open Positions </h3></p></li>	
+			 <p><h4><font color='yellow'>[Postdoc]</font> I have multiple <a href="https://ntu.wd3.myworkdayjobs.com/Careers/job/NTU-Main-Campus-Singapore/Research-Fellow_R00000715-1"><font color=''> Post-doc Research Fellow </font></a> openings on machine learning. Candidates can <a href="https://ntu.wd3.myworkdayjobs.com/Careers/job/NTU-Main-Campus-Singapore/Research-Fellow_R00000715-1"><font color=''> Apply Here </font></a>, or email me. </h4></p>-->
+			<!-- <li><p><h3> 2021 </h3></p></li>	  -->
+
+			<p><h3>[21].	“Recent advances in deep learning for medical imaging,” The Fourth International Symposium on Image Computing and Digital Medicine (ISICDM 2020), Shenyang, China, Dec. 5, 2020.</h3></p>
+			<p>
+				<h3>[20].	“MAGIC: Manifold and Graph Integrative Convolutional Network for Low-Dose CT Reconstruction,” The China Society for Industrial and Applied Mathematic (CSIAM) 18th Annual Meeting, Changsha, China, Oct. 31, 2020.</h3>
+			</p>
+			<p>
+				<h3>[19].	“Deep Learning for Medical Imaging: from Single-Domain to Dual-Domain Recon,” School of Computer Science and Engineering, Southeast University, Nanjing, China. Oct. 16, 2020.</h3>
+			</p>
+			<p>
+				<h3>[18].	“Deep Learning for Medical Imaging: from Single-Domain to Dual-Domain Recon,” School of Mathematics and Statistics, Xidian University, Xi’an, China. Sep. 8, 2020.</h3>
+			</p>
+			<p>
+				<h3>[17].	“Machine Learning for Medical Imaging,” Department of Electronic Science, Xiamen University, Xiamen, China. Dec. 9, 2019.</h4>
+				<h3>[16].	“Spectral CT reconstruction – ASSIST: aided by self-similarity in image-spectral tensors,” The Third International Symposium on Image Computing and Digital Medicine (ISICDM 2019), Xi’an, China, Aug. 24, 2019.</h4>
+				<h3>[15].	“Sparse-View CT Reconstruction via Convolutional Sparse Coding,” 2019 Dalian Youth Forum, Chinese Society of Biomedical Engineering, Dalian, China, Aug. 21, 2019.</h4>
+				<h3>[14].	“Deep Reconstruction: Deep Learning for Image Reconstruction & Beyond,” School of Mathematics, Capital Normal University, Beijing, China. Aug. 17, 2019.</h4>
+				<h3>[13].	“Deep Learning for Biomedical Imaging and Beyond,” HDU Workshop on Optimization Methods for Imaging and Big Data Problems, Hangzhou, China, May 24, 2019.</h4>
+				<h3>[12].	“Deep Reconstruction: Deep Learning for Image Reconstruction & Beyond,” HENU Workshop on Theory and Applications for Inverse Problems in Digital Image, Kaifeng, China, Mar. 30, 2019.</h4>
+				<h3>[11].	“Deep Reconstruction: Deep Learning for CT Image Reconstruction,” 2018 10th International Conference on Graphic and Image Processing, Chengdu, China, Dec. 13, 2018. (Keynote Speaker)</h4>
+				<h3>[10].	“Deep Learning for Low-Dose CT,” MinFound Medical Systems Co., Ltd., Hangzhou, China, Nov. 7, 2018</h4>
+				<h3>[09].	“Deep Reconstruction: Deep Learning for CT Image Reconstruction,” The China Society for Industrial and Applied Mathematic (CSIAM) 16th Annual Meeting, Chengdu, China, Sep. 15, 2018.</h4>
+				<h3>[08].	“Deep Reconstruction,” 2018 Tianjin Youth Forum, Chinese Society of Biomedical Engineering, Tianjin, China, Aug. 4, 2018.</h4>
+				<h3>[07].	“Improving Low-Dose CT Imaging via Machine Learning,” School of Computer Science and Engineering, Southeast University, Nanjing, China. Jun. 21, 2018.</h4>
+				<h3>[06].	“Learned experts' assessment-based reconstruction network (“LEARN”) for sparse-data CT,” SIAM Conference on Imaging Science, Bologna, Italy, Jun. 7, 2018.</h4>
+				<h3>[05].	“Deep learning for low-dose CT,” SPIE Optical Engineering + Applications conference, San Diego, California, USA. Aug. 8, 2017.</h4>
+				<h3>[04].	“Image Quality Assessment in the Context of Machine Learning for Low-dose CT,” The 14th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine (Fully3D), Xi’an, Shaanxi, China. Jun. 19, 2017. (Keynote Speaker)</h4>
+				<h3>[03].	“Deep learning for medical image analysis,” School of Preclinical and Forensic Medicine, Sichuan University, Chengdu, Sichuan, China. Mar. 17, 2017.</h4>
+				<h3>[02].	“Deep learning for CT imaging,” Institute of High Energy Physics (IHEP), Chinese Academy of Sciences, Beijing, China. Nov. 25, 2016.</h4>
+				<h3>[01].	“Spectral CT reconstruction using image sparsity and spectral correlation,” Computational Biomedical Imaging Workshop, School of Biomedical Engineering, Institute of Natural Sciences, and Institute of Data Science Shanghai Jiao Tong University, Shanghai, China. Oct. 17, 2015. </h4>
+			</p>
+
+        </div>
+    <div class="bottom-divider"></div> 
+    </div>
+<!--End News Section-->
+<!--Begin Publication Section-->
+    <div class='click-content' id="publication">
+		<!-- 期刊 -->
+    	<h1>Journal Publications</h1>
+        <div class="top-divider"></div>
+        <div class="content">
+			<!--Preprint-->
+			<!-- <li><p><h2>Preprint</h2></p></li>
+
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y. Li, <font color=''>B. Wen</font>, H. Cheng, and Y. Bresler, "Joint Dimensionality Reduction for Separable Embedding Estimation," [<a href="https://arxiv.org/abs/2101.05500"><font color='green'> Arxiv:2101.05500 </font></a>]</h3>			
+		
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; T. Bai, J. Chen, J. Zhao, <font color=''>B. Wen</font>, X. Jiang and A. Kot, "Feature Distillation With Guided Adversarial Contrastive Learning" [<a href="https://arxiv.org/pdf/2009.09922"><font color='green'> Arxiv:2009.09922 </font></a>]</h3>	
+
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; H. Cheng, J. T. Zhou, W. P. Tay and <font color=''>B. Wen</font>, "Attentive Graph Neural Networks for Few-Shot Learning," [<a href="https://arxiv.org/abs/2007.06878"><font color='green'> Arxiv:2007.06878 </font></a>]</h3>
+
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Z Shao, Y Pu, J Zhou, <font color=''>B. Wen</font> and Y Zhang , "Hyper RPCA: Joint Maximum Correntropy Criterion and Laplacian Scale Mixture Modeling On-the-Fly for Moving Object Detection," [<a href="https://arxiv.org/abs/2006.07795"><font color='green'> Arxiv:2006.07795 </font></a>]</h3>
+			
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=''>B. Wen</font>, Y. Li, Y. Li, and Y. Bresler, "A Set-Theoretic Study of the Relationships of Image Models and Priors for Restoration Problems," [<a href="https://arxiv.org/abs/2003.12985"><font color='green'> Arxiv:2003.12985 </font></a>]</h3>				 -->
+			<li><p><h2>2021</h2></p></li>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [59].	Ziwen Kan, Suhang Li, Leyuan Fang*, and <font color='red'>Yi Zhang</font>.  Attention-based octave network for hyperspectral image denoising. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [58].	Mingzheng Hou#, Song Liu#, Jiliu Zhou*,<font color='red'>Yi Zhang</font>, and Ziliang Feng.  Extreme low-resolution activity recognition using a super-resolution-oriented generative adversarial network. Micromachines, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [57].	Yifan Qiao,<font color='red'>Yi Zhang</font>, Nian Liu, Pu Chen*, and Yan Liu*.  An end-to-end pipeline for early diagnosis of acute promyelocytic leukemia based on a compact CNN Model. Diagnosis, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [56].	Yan Luo, Peng Feng*, Ruge Zhao,<font color='red'>Yi Zhang</font>, Xiaojing Ye, and Yunmei Chen*.  Simulation research of potential contrast agents for X-Ray fluorescence CT with photon counting detectors. Frontiers in Physics, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [55].	Zhizhong Huang, Junping Zhang,<font color='red'>Yi Zhang</font>, and Hongming Shan*.  DU-GAN: Generative adversarial networks with dual-domain U-Net based discriminators for low-dose CT denoising. IEEE Transactions on Instrumentation and Measurement, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [54].	Qingchao Zhang, Mehrdad Alvandipour, Wenjun Xia,<font color='red'>Yi Zhang</font>, Xiaojing Ye, and Yunmei Chen*. Provably convergent learned inexact descent algorithm for LDCT reconstruction. Submitted to IEEE Transactions on Medical Imaging, 2021.</h3>			
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [53].	Xiang Chen, Wenjun Xia, Yan Liu, Hu Chen, Jiliu Zhou, Zhiyuan Zha, Bihan Wen, and <font color='red'>Yi Zhang*</font>. FONT-SIR: Fourth-order nonlocal tensor decomposition model for spectral CT image reconstruction. Submitted to IEEE Transactions on Medical Imaging, 2021. </h3>			
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [52].	Tao Wang, Wenjun Xia, Yongqiang Huang, Huaiqiang Sun, Yan Liu, Hu Chen, Jiliu Zhou, and  <font color='red'>Yi Zhang*</font>. DAN-Net: Dual-domain adaptive-scaling non-local network for CT metal artifact reduction. Physics in Medicine and Biology, in revision 2021. </h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [51].	Qingsong Wu, Fei Fan, Peixi Liao, Yancun Lai, Wenchi Ke, Wenchao Du, Hu Chen, Zhenhua Deng, and <font color='red'>Yi Zhang</font>. Human identification with dental panoramic images based on deep learning. Sensing and Imaging, vol. 22, Article No.: 4, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [50].	<font color='red'>Yi Zhang</font>, Hu Chen*, Wenjun Xia, Yang Chen, Baodong Liu, Yan Liu, Huaiqiang Sun, and Jiliu Zhou. LEARN++: Recurrent dual-domain reconstruction network for compressed sensing CT. Submitted to IEEE Transactions on Computational Imaging, 2021.</h3>
+			<!--2020-->
+			<li><p><h2>2020</h2></p></li>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [49].	Wenjun Xia, Zexin Lu, Yongqiang Huang, Yan Liu, Hu Chen, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. CT Reconstruction with PDF: Parameter-dependent framework for data from multiple geometries and dose levels. IEEE Transactions on Medical Imaging, in revision, 2020.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [48].	Yikun Zhang, Dianlin Hu, Qianlong Zhao, Guotao Quan, Jin Liu, Qiegen Liu, <font color='red'>Yi Zhang*</font>, Yang Chen*, and Limin Luo. CLEAR: Comprehensive learning enabled adversarial reinforcement for subtle structure enhanced low-dose CT imaging. IEEE Transactions on Medical Imaging, in revision, 2020.</h3>	
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [47].	Jiaqi Qin, <font color='red'>Yi Zhang</font>, Shixiong Fan, Xiaonan Hu, Yongqiang Huang, Zexin Lu, and Yan Liu*. Multi-task short-term reactive and active load forecasting method based on attention-LSTM model. International Journal of Electrical Power and Energy Systems, accepted, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [46].	Yikun Zhang, Tianling Lv, Rongjun Ge, Qianlong Zhao, Dianlin Hu, Liu Zhang, Jin Liu, <font color='red'>Yi Zhang</font>, Qiegen Liu, Wei Zhao*, and Yang Chen*. CD-Net: Comprehensive domain network with spectral complementary for DECT sparse-view reconstruction. IEEE Transactions on Computational Imaging, pp. 436-447, vol. 7, 2021.</h3>	
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [45].	Zhuonan He#, Yikun Zhang#, Yu Guan, Shanzhou Niu, <font color='red'>Yi Zhang</font>, Yang Chen*, and Qiegen Liu*. Iterative reconstruction for low-dose CT using deep gradient priors of generative model. IEEE Transactions on Computational Imaging, in revision, 2020.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [44].	Wenjun Xia, Zexin Lu, Yongqiang Huang, Zuoqiang Shi, Yan Liu, Hu Chen, Yang Chen, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. MAGIC: Manifold and graph integrative convolutional network for low-dose CT reconstruction. IEEE Transactions on Medical Imaging, in revision, 2020.</h3>	
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [43].	Yongqiang Huang, Wenjun Xia, Zexin Lu, Yan Liu, Hu Chen, Jiliu Zhou, Leyuan Fang, and <font color='red'>Yi Zhang*</font>. Noise-powered disentangled representation for unsupervised speckle reduction of optical coherence tomography images. IEEE Transactions on Medical Imaging, DOI: 10.1109/TMI.2020.3045207, online, 2020.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [42].	Zerui Shao, Yifei Pu, Jiliu Zhou, Bihan Wen*, and <font color='red'>Yi Zhang*</font>. Hyper RPCA: Joint maximum correntropy criterion and Laplacian scale mixture modeling on-the-fly for moving object detection. IEEE Transactions on Multimedia, in revision, 2020. </h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [41].	Wenchao Du, Hu Chen*, Hongyu Yang, and <font color='red'>Yi Zhang*</font>. Disentangled generative adversarial network for low-dose CT. EURASIP Journal on Advances in Signal Processing, in revision, 2020.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [40].	Yancun Lai, Fei Fan, Qingsong Wu, Wenchi Ke, Peixi Liao, Zhenhua Deng, Hu Chen*, <font color='red'>Yi Zhang</font>. LCANet: Learnable connected attention network for human identification using dental images. IEEE Transactions on Medical Imaging, pp. 905-915, vol. 40, no. 3, 2021.</h3>			
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [39].	Maosong Ran, Wenjun Xia, Yongqiang Huang, Zexin Lu, Peng Bao, Yan Liu, Huaiqiang Sun, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. MD-Recon-Net: a parallel dual-domain convolutional neural network for compressed sensing MRI. IEEE Transactions on Radiation and Plasma Medical Sciences, pp. 120-135, vol. 5, no. 1, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [38].	Fengqin Zhang, Minghui Zhang, Binjie Qin, <font color='red'>Yi Zhang</font>, Zichen Xu, Dong Liang, Qiegen Liu*. REDAEP: Robust and enhanced denoising autoencoding prior for sparse-view CT reconstruction, IEEE Transactions on Radiation and Plasma Medical Sciences, pp. 108-119, vol. 5, no. 1, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [37].	Wenchi Ke, Fei Fan, Peixi Liao, Yancun Lai, Qingsong Wu, Wenchao Du, Hu Chen*, Zhenhua Deng, and <font color='red'>Yi Zhang</font>. Biological gender estimation from panoramic dental x‑ray images based on multiple feature fusion model. Sensing and Imaging, vol. 21, Article No.: 54, 2020.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [36].	Zhimin Shao, Zexin Lu, Maosong Ran, Leyuan Fang*, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. Residual encoder-decoder conditional generative adversarial network for pansharpening. IEEE Geoscience and Remote Sensing Letters, pp. 1573-1577, vol. 17, no. 9, 2020.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [35].	Gaoyu Chen, Xiang Hong, <font color='red'>Yi Zhang</font>, Hu Chen, Shujun Fu, Yunsong Zhao, Xiaoqun Zhang, Qiu Huang*, Hao Gao*. AirNet: fused analytical and iterative reconstruction with densely connected deep neural networks for sparse-data CT. Medical Physics, pp. 2916-2930, vol. 47, no. 7, 2020.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [34].	Chenyu You, Guang Li, <font color='red'>Yi Zhang*</font>, Xiaoliu Zhang, Hongming Shan, Mengzhou Li, Shenghong Ju, Zhen Zhao, Zhuiyang Zhang, Wenxiang Cong, Michael W. Vannier, Punam K. Saha, Eric A. Hoffman, and Ge Wang*. CT super-resolution GAN constrained by the identical, residual, and cycle learning ensemble (GAN-CIRCLE). IEEE Transactions on Medical Imaging, pp. 188-203, vol. 39, no. 1, 2020.</h3>
+			
+			<!--2019-->				
+			<li><p><h2>2019</h2></p></li>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [33].	Wenchao Du, Hu Chen*, Peixi Liao, Hongyu Yang, Ge Wang, and <font color='red'>Yi Zhang*</font>. Visual attention network for low-dose CT. IEEE Signal Processing Letters, pp. 1152-1156, vol. 26, no. 8, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [32].	Yutong Bai, Qifan Zhang, Zexin Lu, and <font color='red'>Yi Zhang*</font>. SSDC-DenseNet: An cost-effective end-to-end spectral-spatial dual-channel dense network for hyperspectral image classification. IEEE Access, pp. 84876-84889, vol. 7, 2019.</h3> 
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [31].	Wenjun Xia, Weiwen Wu, Shanzhou Niu, Fenglin Liu, Jiliu Zhou, Hengyong Yu, Ge Wang, and <font color='red'>Yi Zhang*</font>. Spectral CT reconstruction – ASSIST: aided by self-similarity in image-spectral tensors. IEEE Transactions on Computational Imaging, pp. 420-436, vol. 5, no. 3, 2019.</h3>	
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [30].	Peng Bao, Wenjun Xia, Kang Yang, Weiyan Chen, Mianyi Chen, Yan Xi, Jiliu Zhou, He Zhang, Huaiqiang Sun, Zhangyang Wang, and <font color='red'>Yi Zhang*</font>. Convolutional sparse coding for compressed sensing CT reconstruction. IEEE Transactions on Medical Imaging, pp. 2607-2619, vol. 38, no. 11, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [29].	Maosong Ran, Jinrong Hu, Yang Chen, Huaiqiang Sun, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. Denoising of 3D magnetic resonance images using a residual encoder-decoder Wasserstein generative adversarial network. Medical Image Analysis, pp. 165-180, vol. 55, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [28].	Jin Liu, <font color='red'>Yi Zhang</font>, Qianlong Zhao, Tianling Lv, Weiwen Wu, Ning Cai, Guotao Quan, Wei Yang, Yang Chen*, Limin Luo, Huazhong Shu, and Jean-Louis Coatrieux. Deep iterative reconstruction estimation (DIRE): approximate iterative reconstruction estimation for low dose CT imaging. Physics in Medicine and Biology, vol. 64, 135007 (21 pages), 2019.</h3>			
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [27].	Yongqiang Huang, Zexin Lu, Zhimin Shao, Maosong Ran, Jiliu Zhou, Leyuan Fang, and <font color='red'>Yi Zhang*</font>. Simultaneous denoising and super-resolution of optical coherence tomography images based on generative adversarial network. Optics Express, pp. 12289-12307, vol. 27, no. 9, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [26].	Ashkan Abbasi, Amirhassan Monadjemi*, Leyuan Fang*, Hossein Rabbanic, and <font color='red'>Yi Zhang</font>. Three-dimensional optical coherence tomography image denoising through multi-input fully-convolutional networks. Computers in Biology and Medicine, pp. 1-8, vol. 108, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [25].	Yuan Li, Zhizhong Huang, Xiaoai Dong, Weibo Liang, Hui Xue, Lin Zhang, <font color='red'>Yi Zhang*</font>, and Zhenhua Deng*. Forensic age estimation for pelvic X-ray images using deep learning. European Radiology, pp. 2322-2329, vol. 29, no. 5, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [24].	Lai Xu, Aamir Muhammad, Yifei Pu, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. Fractional-order quantum particle swarm optimization. PLoS ONE, e 0218285, vol. 14, no. 6, 2019.</h3>
+			<!--2018-->
+			
+			<li><p><h2>2018</h2></p></li>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [23].	Luzhen Deng, Biao Wei, Peng He, <font color='red'>Yi Zhang</font>, and Peng Feng*. A Geant4-based Monte Carlo study of a benchtop multi-pinhole X-ray fluorescence computed tomography imaging. International Journal of Nanomedicine, pp. 7207-7216, vol. 13, 2018.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [22].	<font color='red'>Yi Zhang</font>, Kang Yang*, Yining Zhu, Wenjun Xia, Peng Bao, and Jiliu Zhou. NOWNUNM: nonlocal weighted nuclear norm minimization for sparse-sampling CT reconstruction. IEEE Access, pp. 73370-73379, vol. 6, 2018. </h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [21].	Xiaochuan Wu, Peng He*, <font color='red'>Yi Zhang</font>, Mainyi Chen, Biao Wei, Fenglin Liu, Kang An, and Peng Feng*. The small animal material discrimination study based on equivalent monochromatic energy projection decomposition method with dual-energy CT system. Journal of X-Ray Science and Technology, pp. 919-929, vol. 26, no. 6, 2018.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [20].	Chenyu You, Qingsong Yang, Hongming Shan, Lars Gjesteby, Guang Li, Shenghong Ju, Zhuiyang Zhang, Zhen Zhao, <font color='red'>Yi Zhang</font>, Wenxiang Cong, and Ge Wang*. Structurally-sensitive multi-scale deep neural network for low-dose CT denoising. IEEE Access, pp. 41839-41855, vol. 6, 2018.</h3>		
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [19].	Chunhui Bao, Yifei Pu, and <font color='red'>Yi Zhang*</font>. Fractional-order deep backpropagation neural network. Computational Intelligence and Neuroscience, Article ID 7361628, 10 pages, 2018.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [18].	Peng Bao, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. Few-view CT reconstruction with group-sparsity regularization. International Journal for Numerical Methods in Biomedical Engineering, e3101, vol. 34, no. 9, 2018.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [17].	Hongming Shan, <font color='red'>Yi Zhang*</font>, Qingsong Yang, Uwe Kruger, Wenxiang Cong, and Ge Wang*. 3D convolutional encoder-decoder network for low-dose CT via transfer learning from a 2D trained network. IEEE Transactions on Medical Imaging, pp. 1522-1534, vol. 37, no. 6, 2018.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [16].	Qingsong Yang, Pingkun Yan*, Yanbo Zhang, Hengyong Yu, Yongyi Shi, Xuanqin Mou, Mannudeep K. Kalra, <font color='red'>Yi Zhang</font>, Ling Sun and Ge Wang, Low dose CT image denoising using a generative adversarial network with Wasserstein distance and perceptual loss. IEEE Transactions on Medical Imaging, pp. 1348-1357, vol. 37, no. 6, 2018.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [15].	Hu Chen, <font color='red'>Yi Zhang*</font>, Yunjin Chen, Junfeng Chen, Weihua Zhang, Huaiqiang Sun, Yang Lv, Peixi Liao, Jiliu Zhou, and Ge Wang. LEARN: Learned experts’ assessment-based reconstruction network for sparse-data CT. IEEE Transactions on Medical Imaging, pp. 1333-1347, vol. 37, no. 6, 2018.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [14].	Yan Liu and <font color='red'>Yi Zhang*</font>. Low-dose CT restoration via stacked sparse denoising autoencoders. Neurocomputing, pp. 80-89, vol. 284, 2018.</h3>
+
+			<!--2017-->
+			<li><p><h2>2017</h2></p></li>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [13].	Wenchao Du, Hu Chen, Zhihong Wu, Huaiqiang Sun, Peixi Liao, and <font color='red'>Yi Zhang*</font>. Stacked competitive networks for noise reduction in low-dose CT. PLoS ONE, e0190069, vol. 12, no. 12, 2017.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [12].	Jin Liu, Jianhua Ma, <font color='red'>Yi Zhang</font>, Yang Chen*, Jian Yang, Huazhong Shu, Limin Luo, Gouenou Coatrieux, Wei Yang, Qianjin Feng, and Wufan Chen. Discriminative feature representation to improve projection data inconsistency for low dose CT imaging. IEEE Transactions on Medical Imaging, pp. 2499-2509, vol. 36, no. 12, 2017.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [11].	Hu Chen, <font color='red'>Yi Zhang*</font>, Mannudeep K. Kalra, Feng Lin, Yang Chen, Peixi Liao, Jiliu Zhou, and Ge Wang. Low-dose CT with a residual encoder-decoder convolutional neural network. IEEE Transactions on Medical Imaging, pp. 2524-2535, vol. 36, no. 12, 2017.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [10].	Hu Chen, <font color='red'>Yi Zhang*</font>, Weihua Zhang, Peixi Liao, Ke Li, Jiliu Zhou, and Ge Wang. Low-dose CT via convolutional neural network. Biomedical Optics Express, pp. 679-694, vol. 8, no. 2, 2017.</h3>
+			<!--2016-->
+			<li><p><h2>2016</h2></p></li>			
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [09].	<font color='red'>Yi Zhang</font>, Yan Xi, Qingsong Yang, Wenxiang Cong, Jiliu Zhou and Ge Wang*. Spectral CT reconstruction with image sparsity and spectral mean. IEEE Transactions on Computational Imaging, pp. 510-523, vol. 2, no. 4, 2016.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [08].	<font color='red'>Yi Zhang</font>, Yan Wang*, Weihua Zhang, Feng Lin, Yifei Pu and Jiliu Zhou. Statistical iterative reconstruction using adaptive fractional order regularization. Biomedical Optics Express, pp. 1015-1029, vol. 7, no. 3, 2016.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [07].	Yan Wang, Xi Wu, Wenzao Li, Zhi Li, <font color='red'>Yi Zhang*</font> and Jiliu Zhou. Analysis of micro-Doppler signatures of vibration targets using EMD and SPWVD. Neurocomputing, pp. 48-56, vol. 171, no. 1, 2016.</h3>	
+			
+			<!--2015-->
+			<li><p><h2>2015</h2></p></li>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [06].	Ying Fu, Xi Wu*, Xiaohua Li, Kun He, <font color='red'>Yi Zhang</font> and Jiliu Zhou. Image motion restoration using fractional-order gradient prior. Informatica, pp. 621-634, vol. 26, no. 4, 2015.</h3>
+
+			<!--2014-->
+			<li><p><h2>2014</h2></p></li>			
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [05].	Yan Wang, Xi Wu*, Wenzao Li, <font color='red'>Yi Zhang</font>, Zhi Li and Jiliu Zhou. A Reconstruction method based on AL0FGD for compressed sensing in border monitoring WSN system. PLOS ONE, e112932, vol. 9, no. 12, 2014.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [04].	Menglong Yang*, Yiguang Liu, Zhisheng You, Xiaofeng Li and Yi Zhang. A homography transform based higher-order MRF model for stereo matching. Pattern Recognition Letters, pp. 66-71, vol. 40, no. 1, 2014.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [03].	<font color='red'>Yi Zhang*</font>, Weihua Zhang, Yinjie Lei and Jiliu Zhou. Few-view image reconstruction with fractional-order total variation. Journal of the Optical Society of America A, pp. 981-995, vol. 31, no. 5, 2014.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [02].	<font color='red'>Yi Zhang</font>, Weihua Zhang* and Jiliu Zhou. Accurate sparse-projection image reconstruction via nonlocal TV regularization. The Scientific World Journal, Article ID 458496, 7 pages, 2014.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [01].	Ying Fu*, Xiaohua Li, Lei Liang, <font color='red'>Yi Zhang</font> and Jiliu Zhou. The restoration of textured images using fractional-order regularization. Mathematical Problems in Engineering, Article ID 356906, 10 pages, 2014.</h3>
+			
+			
+			<!--Early-->
+			<!--<li><p><h2>Undergrat Works</h2></p></li>			
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=''>B. Wen</font> and Y. Lu, “A study of synthetic aperture radar imaging with compressed sensing,” in Proc. IEEE Asia-Pacific Conf. on Antennas and Propagation (APCAP), 2012.&nbsp;&nbsp;[<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6333277"><font color=''>LINK</font></a>]</h3>
+		
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color=''>B. Wen</font> and Y. Lu, “MATLAB tools for EnviSAT ASAR data visualization and image enhancement,” in Proc. SPIE Int. Symp. on Lidar and Radar Mapping Tech., 2011.&nbsp;&nbsp;[<a href="http://dx.doi.org/10.1117/12.912347"><font color=''>LINK</font></a>]</h3>-->		
+			<p>&nbsp;</p>		
+        </div>
+		<div class="bottom-divider"></div> 
+		<!-- 会议 -->
+		<h1>Conference</h1>
+		<div class="top-divider"></div>
+		<div class="content">
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [20].	Wenjun Xia, Zexin Lu, Yongqiang Huang, Yan Liu, Hu Chen, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. CT reconstruction with PDF: parameter-dependent framework for multiple scanning geometries and dose levels. 2021 IEEE International Symposium on Biomedical Imaging (ISBI), accepted, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [19].	Xiang Chen, Wenjun Xia, Yan Liu, Hu Chen, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. Fourth order nonlocal tensor decomposition model for spectral computed tomography. 2021 IEEE International Symposium on Biomedical Imaging (ISBI), accepted, 2021.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [18].	Yongqiang Huang, Wenjun Xia, Zexin Lu, Yan Liu, Jiliu Zhou, Leyuan Fang, and <font color='red'>Yi Zhang*</font>. Disentanglement network for unsupervised speckle reduction of optical coherence tomography images. 2020 International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), pp. 675-684, 2020.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [17].	Wenjun Xia, Weiwen Wu, Fenglin Liu, Hengyong Yu, Jiliu Zhou, Ge Wang, and <font color='red'>Yi Zhang*</font>. Spectral CT reconstruction via self-similarity in image-spectral tensors. 2019 IEEE International Symposium on Biomedical Imaging (ISBI), pp. 1459-1462, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [16].	Peng Bao, Wenjun Xia, Kang Yang, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. Sparse-view CT reconstruction via convolutional sparse coding. 2019 IEEE International Symposium on Biomedical Imaging (ISBI), pp. 1446-1449, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [15].	Kang Yang, Wenjun Xia, Peng Bao, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. Nonlocal weighted nuclear norm minimization based sparse-sampling CT image reconstruction. 2019 IEEE International Symposium on Biomedical Imaging (ISBI), pp. 1700-1703, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [14].	Peng Bao, Jiliu Zhou, and <font color='red'>Yi Zhang*</font>. Group sparsity based sparse-sampling CT reconstruction. 2018 40th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), pp. 5097-5100, 2018.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [13].	Hu Chen, <font color='red'>Yi Zhang*</font>, Jiliu Zhou, and Ge Wang. Deep learning for low-dose CT. Proc. SPIE 10391, Developments in X-Ray Tomography XI, 103910I (19 September 2017); DOI: 10.1117/12.2272723.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [12].	    Hu Chen, <font color='red'>Yi Zhang*</font>, Weihua Zhang, Peixi Liao, Ke Li, Jiliu Zhou, and Ge Wang. Low-dose CT denoising with convolutional neural network. 2017 IEEE International Symposium on Biomedical Imaging (ISBI), pp. 143-146, 2017.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [11].	Hu Chen, <font color='red'>Yi Zhang*</font>, Weihua Zhang, Peixi Liao, Ke Li, Jiliu Zhou, and Ge Wang. Low-Dose CT Restoration with Deep Neural Network. The 14th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine (Fully3D), pp. 25-28, 2017.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [10].	Zongqing Ma, <font color='red'>Yi Zhang*</font>, Weihua Zhang, Yan Wang*, Feng Lin, Kun He, Xiaohua Li, Yifei Pu, and Jiliu Zhou. Noise reduction in low-dose CT with stacked sparse denoising autoencoders. 2016 IEEE Nuclear Science Symposium and Medical Imaging Conference. pp. 1-2, 2016.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [09].	<font color='red'>Yi Zhang</font>, Yan Xi, Qingsong Yang, Wenxiang Cong, Jiliu Zhou and Ge Wang*. Spectral CT reconstruction using image sparsity and spectral correlation. 2015 IEEE International Symposium on Biomedical Imaging (ISBI), pp. 1600-1603, 2015.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [08].	<font color='red'>Yi Zhang*</font>, Wei-Hua Zhang, Yi-Fei Pu, Yin-Jie Lei, Hu Chen, Meng-Long Yang, and Jiliu Zhou. Few-view image reconstruction with fractional-order total variation. The 12th International Meeting on Fully Three-Dimensional Image Reconstruction in Radiology and Nuclear Medicine (Fully3D), pp. 177-180, 2013.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [07].	<font color='red'>Yi Zhang*</font>, Yifei Pu and Jiliu Zhou. Efficient CT metal artifacts reduction based on improved conductivity coefficient. Advances in Intelligent and Soft Computing, pp. 129-134, vol. 158AISC, no. 1, 2012.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [06].	Jinrong Hu, Jiliu Zhou, Yifei Pu, Yan Liu and <font color='red'>Yi Zhang*</font>. A novel fraction-based hopfield neural networks. Advances in Intelligent and Soft Computing, pp. 143-150, vol. 158AISC, no. 1, 2012.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [05].	<font color='red'>Yi Zhang*</font>, Yi-Fei Pu, Jin-Rong Hu and Ji-Liu Zhou. Fast x-ray CT metal artifacts reduction based on noniterative sinogram inpainting. 2011 IEEE Nuclear Science Symposium and Medical Imaging Conference. pp. 2062-2064, 2011.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [04].	<font color='red'>Yi Zhang*</font>, Yifei Pu and Jiliu Zhou. Two new nonlinear PDE image inpainting models. Communications in Computer and Information Science, pp. 341-347, vol. 159, 2011.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [03].	<font color='red'>Yi Zhang*</font> and Jiliu Zhou. Research and implementation of EAI based on SOA. International Conference on Computational Intelligence and Software Engineering (CiSE 2009), DOI: 10.1109/CISE.2009.5362586, 2019.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [02].	Jinrong Hu*, Yifei Pu, <font color='red'>Yi Zhang</font>, Yan Liu and Jiliu Zhou. A novel nonlocal means denoising method using the DCT. International Conference on Image Processing, Computer Vision, and Pattern Recognition, 2011.</h3>
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [01].	Yuhui Hu and <font color='red'>Yi Zhang*</font>. Local and sub-localizing region-based active contours. The 2nd International Conference on Computer Engineering and Technology (ICCET), pp. 109-112, vol.3, 2010.</h3>
+		</div>
+		<div class="bottom-divider"></div> 
+		<!-- 书籍 -->
+		<h1>Book</h1>
+		<div class="top-divider"></div>
+		<div class="content">
+			<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1].	Ge Wang, <font color='red'>Yi Zhang</font>, Xiaojing Ye and Xuanqin Mou. “Machine learning for tomographic reconstruction”, IOP Publishing, 2020.</h3>
+		</div>
+		<div class="bottom-divider"></div> 
+    </div>
+<!--End Publication Section-->
+<!--Begin Member Section--> 
+	<div class='click-content' id="course">
+    	<h1>Team Members</h1>
+        <div class="top-divider"></div>
+       <div class="content">
+            <div class="col">
+            <h3>Wenjun Xia（夏文军）</h3>
+			<p><h4></h4></p>
+            <p><h3>MS 2017,PhD 2019</h3></p>
+            <p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div>
+            
+            <div class="col col-mid">
+            <h3>Zhiwen Wang （王志文）</h3>
+			<p><h3>PhD 2019</h3></p>
+			<p><h4>Deep Learning.</h4></p>
+            </div>
+            
+            <div class="col">
+                <h3>Hui Yu（余慧）</h3>
+                <p><h3>PhD 2019</h3></p>
+                <p><h4>Deep Learning;Medical image analysis and processing.</h4></p>
+            </div>
+
+            <div class="col">
+                <h3>Zexin Lu（陆泽欣）</h3>
+                <p><h3>MS 2018,PhD 2020</h3></p>
+                <p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div>
+        </div>    
+
+		<div class="content">
+            <div class="col">
+                <h3>Hui Wang（王晖）</h3>
+                <p><h3>PhD 2020</h3></p>
+                <p><h4>Deep Learning;CT Image Processing.</h4></p>
+			</div>
+			<div class="col"></div>
+			<div class="col"></div>
+			<div class="col"></div>
+			<div class="col">
+				<h3>Zhongzhou Zhang（张中洲）</h3>
+				<p><h3>PhD in 2021</h3></p>
+				<p><h4>Deep Learning;Medical image analysis and processing.</h4></p>
+			</div>
+			<div class="col">
+				<h3>Ziyuan Yang（杨子元）</h3>
+				<p><h3>PhD in 2021</h3></p>
+				<p><h4>Deep Learning;Federated learning.</h4></p>
+			</div>
+			<div class="col">
+				<h3>Yingyu Chen（陈迎语）</h3>
+				<p><h3>PhD in 2021</h3></p>
+				<p><h4>Deep Learning;CT Image Processing.</h4></p>
+			</div>
+		</div>		
+		
+		<div class="content">
+            <div class="col">
+                <h3>Yifan Qiao（乔一凡）</h3>
+                <p><h3>Master in 2019</h3></p>
+                <p><h4>Machine Learning and Optimization; Deep Learning</h4></p>
+            </div>
+            
+            <div class="col col-mid">
+                <h3>Jiahui Ni（倪家辉）</h3>
+                <p><h3>Master in 2019</h3></p>
+                <p><h4>Deep Learning;MRI Image Processing.</h4></p>
+            </div>
+            
+            <div class="col">
+                <h3>Tao Wang（汪涛）</h3>
+                <p><h3>Master in 2019</h3></p>
+                <p><h4>Deep Learning;CT Image Processing.</h4></p>
+			</div>
+			<div class="col">
+                <h3>Hang Mou（牟航）</h3>
+                <p><h3>Master in 2019</h3></p>
+                <p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div>
+        </div>  
+
+		<div class="content">
+            <div class="col">
+			<h3>Bowen Li（李博文）</h3>
+            <p><h3>Master in 2020</h3></p>
+			<p><h4>Machine Learning and Optimization</h4></p>
+            </div>
+            
+            <div class="col col-mid">
+				<h3>Jie Jing（敬颉）</h3>
+				<p><h3>Master in 2020</h3></p>
+				<p><h4>Image Forensics, Adversarial Machine Learning.</h4></p>
+            </div>
+            
+            <div class="col">
+				<h3>Xiang Chen（陈祥）</h3>
+				<p><h3>Master in 2020</h3></p>
+				<p><h4>Machine Learning and Computational Imaging.</h4></p>
+			</div>
+			<div class="col">
+				<h3>Chenyu Shen（沈晨昱）</h3>
+				<p><h3>Master in 2020</h3></p>
+				<p><h4>Machine Learning and Computational Imaging.</h4></p>
+			</div>
+		</div> 
+
+		<div class="content">
+            <div class="col">
+			<h3>Zhongxian Wang（王钟贤）</h3>
+            <p><h3>Master in 2021</h3></p>
+			<p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div>
+            
+            <div class="col col-mid">
+				<h3>Yili Wei（魏屹立）</h3>
+				<p><h3>Master in 2021</h3></p>
+				<p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div>
+            
+            <div class="col">
+				<h3>Huijie Huangfu（皇甫慧杰）</h3>
+				<p><h3>Master in 2021</h3></p>
+				<p><h4>Object Detection.</h4></p>
+			</div>
+			
+		</div> 
+		<div class="bottom-divider"></div>
+		
+		<h1>Alums</h1>
+		<div class="top-divider"></div>
+		<div class="content">
+            <div class="col">
+                <h3>Peng Bao（包鹏）</h3>
+				<p><h3>Master in 2017</h3></p>
+				<p><h3>深造：北京大学</h3></p>
+                <p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div> 
+            <div class="col">
+                <h3>Maosong Ran（冉茂松）</h3>
+				<p><h3>Master in 2017</h3></p>
+				<p><h3>就业：OPPO</h3></p>
+                <p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div>
+            <div class="col">
+                <h3>Zhimin Shao（邵志敏）</h3>
+				<p><h3>Master in 2017</h3></p>
+				<p><h3>就业：中国邮政储蓄银行</h3></p>
+                <p><h4>Deep Learning;Remote sensing image analysis.</h4></p>
+			</div>
+			<div class="col">
+                <h3>Xiaojie Zhou（周晓杰）</h3>
+				<p><h3>Master in 2017</h3></p>
+				<p><h3>国防生</h3></p>
+                <p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div>
+			<div class="col">			
+                <h3>Kang Yang（杨康）</h3>
+                <p><h4></h4></p>
+				<p><h3>Master in 2017</h3></p>
+				<p><h3>就业：腾讯</h3></p>
+                <p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div>
+		</div>
+		<div class="content">
+            <div class="col">
+                <h3>Yongqiang Huang（黄永强）</h3>
+                <p><h4></h4></p>
+				<p><h3>Master in 2018</h3></p>
+				<p><h3>就业：华为</h3></p>
+                <p><h4>Deep Learning;CT Image Processing.</h4></p>
+            </div>
+            
+            <div class="col col-mid">
+                <h3>Song Liu（刘松）</h3>
+                <p><h4></h4></p>
+				<p><h3>Master in 2018</h3></p>
+				<p><h3>就业：OPPO</h3></p>
+                <p><h4>Deep Learning; Computer Vision.</h4></p>
+            </div>
+
+            <div class="col">			
+                <h3>Zhenyun Yuan（袁针云）</h3>
+                <p><h4></h4></p>
+				<p><h3>Master in 2018</h3></p>
+				<p><h3>就业：中冶赛迪</h3></p>
+                <p><h4>Deep Learning;MRI Image Processing.</h4></p>
+			</div> 
+			<div class="col">			
+                <h3>Jiaqi Qin（秦佳奇）</h3>
+                <p><h4></h4></p>
+				<p><h3>Master in 2018</h3></p>
+				<p><h3>就业：腾讯</h3></p>
+                <p><h4>Deep Learning;Load forecasting.</h4></p>
+            </div>
+			
+        </div>
+		<div class="bottom-divider"></div>
+    </div>
+<!--Contact Section--> 
+	<div class='click-content' id="contact">
+		<h1>Contact</h1>
+		<div class="top-divider"></div>
+		<h2 style="text-align: center;">致有志于加入DIG的同学</h2>
+		<p class="p"  style="text-align: center;">如果你有兴趣加入我的课题组，成为其中一名学生（包括硕士/博士研究生），请认真阅读以下材料，然后按要求提交申请。</p>
+		<div class="content">		
+			<p class="p">1. 自我介绍</p>
+			<p class="p" style="text-indent:1em;">我是四川大学计算机学院（软件学院）教授张意，博士生导师。更多信息可以从我的
+				<a href="http://cs.scu.edu.cn/" style="text-decoration: underline;">学院主页</a>和
+				<a href="https://cs.scu.edu.cn/info/1291/15664.htm" style="text-decoration: underline;">个人主页</a>查到。</p>
+			<br>
+
+			<p class="p">2. 课题组简介</p>
+			<p class="p" style="text-indent:1em;">我的课题组属于
+				<span style="font-weight: bold; display: inline;">天思智能研究所</span>
+				的一部分。研究所由多位老师构成，每位老师负责一个课题组，指导学生开展研究。另外，课题组之间以及与其他兄弟院校和国内外相关实验室都有
+					频繁的合作交流。</p>
+			<p class="p" style="text-indent:1em;">我的课题组为深度成像小组（Deep Imaging Group, DIG），目前
+				<span style="color: #FF3333;display: inline;">围绕基于人工智能和表示学习的成像算法</span>
+				开展以下三个方向研究：</p>
+			<ul>
+				<li><p class="p" style="text-indent:1em;font-weight: bold;">(1) 医学成像<br></p></li>
+				<li><p class="p" style="text-indent:1em;">研究基于学习的医学成像（包括CT、MRI、PET及OCT）相关算法。</p></li> 
+
+				<li><p class="p" style="text-indent:1em;font-weight: bold;">(2) 图像分析<br></p></li>
+				<li><p class="p" style="text-indent:1em;">研究基于深度神经网络的医学影像分析及辅助诊疗。</p></li> 
+
+				<li><p class="p" style="text-indent:1em;font-weight: bold;">(3) 遥感数据处理<br></p></li>
+				<li><p class="p" style="text-indent:1em;">研究基于遥感数据，特别是遥感图像的处理与分析。</p></li> 
+			</ul>
+			<p class="p">具体研究方向细节可通过搜索引擎查询，或阅读本人发表的论文。</p>
+			<br>
+
+			<p class="p">3. 课题组目前开放学生岗位包括以下两类：</p>	
+			<ul>
+				<li><p class="p" style="text-indent:1em;">(1) 硕士研究生<br></p></li>
+				<li><p class="p" style="text-indent:1em;">面向获得推免资格的计算机科学技术、电子信息、数学等相关学科的优秀
+					<span style="font-weight: bold;display: inline;">本科生/硕士生。</span></p></li> 
+
+				<li><p class="p" style="text-indent:1em;">(2) 博士研究生<br></p></li>
+				<li><p class="p" style="text-indent:1em;">面向对课题组研究方向优秀在校
+					<span style="font-weight: bold;display: inline;">本科生（直博）和硕士生。</span></p></li> 
+			</ul>
+			<br>
+
+
+			<p class="p">4. 课题组收获</p>	
+			<p class="p" style="text-indent:1em;">
+				我会一对一指导课题组每一位学生，提供舒适的工作环境和丰厚的助研津贴，并资助学生积极参与国内和国际交流，在川大的平台上为每位学生提供最大的助力。
+			</p>
+			<br>
+
+
+			<p class="p">5. 课题组要求申请学生必须具备的能力</p>	
+			<ul>
+				<li><p class="p" style="text-indent:1em;">(1) 目标明确及热爱所学<br></p></li>
+				<li><p class="p" style="text-indent:1em;">
+					明确自己为什么要加入我的课题组，明确自己在课题组想要获得什么。要热爱自己的学科和专业，对将来所学知识表现出极大的兴趣，要让真正的兴趣和喜爱来内驱自己不断前进。
+				</p></li> 
+
+				<li><p class="p" style="text-indent:1em;">(2) 乐观开朗及坚韧不拔<br></p></li>
+				<li><p class="p" style="text-indent:1em;">懂得科研不是一帆风顺，要坐得住板凳和耐得住寂寞,要注意点滴积累。</p></li> 
+
+				<li><p class="p" style="text-indent:1em;">(3) 勇于创新及乐于挑战<br></p></li>
+				<li><p class="p" style="text-indent:1em;">
+					在探索未知事物中，充满好奇心和求知欲，富有怀疑的精神，乐于尝试，并以正确心态面对挫折。具有良好的团队合作精神，乐于阐述自己的想法，有效与导师和其他伙伴沟通。
+				</p></li> 
+
+				<li><p class="p" style="text-indent:1em;">(4) 数学扎实及编程熟练<br></p></li>
+				<li><p class="p" style="text-indent:1em;">
+					具有扎实的数学功底和钻研精神，熟悉 C 或 C++或 Python或Matlab，至少用过一门深度学习框架语言，比如 PyTorch、Tensorflow，并有图像处理、机器学习等科研项目经验。
+				</p></li> 
+			</ul>
+			<br>
+
+
+			<p class="p">6. 申请加入课题组流程</p>
+			<ul>
+				<li><p class="p" style="text-indent:1em;">(1) 阅读报告:
+					在
+					<span style="color: #FF3333;display: inline;">满足以上具备能力要求的基础上</span>
+					，了解目前课题组的任意一个研究方向，阅读至少一篇课题组近五年来发表的论文，写一份不超过一页的阅读报告,阐述自己的理解和想法。
+				</p></li>
+
+				<li><p class="p" style="text-indent:1em;">(2) 个人简历:
+					将上述报告，连同个人简历、成绩单一起发到我的电子邮箱yzhang@scu.edu.cn。简历不一定特别漂亮，但请排版工整,内容清晰明了。
+					邮件标题为【申请读研-学生姓名-学校名称】或【申请读博--学生姓名-学校名称】。
+				</p></li>
+
+				<li><p class="p" style="text-indent:1em;">(3) 面试:
+					对于我认为合适的学生，会在三天内回复，并约定时间，发出远程或者当面面试邀请。
+					<span style="color: #FF3333;display: inline;font-weight: bold;">请认真阅读上述要求。</span>
+				</p></li>
+			</ul>
+			<br>
+			<br>
+
+			<p class="p"><span style="display: inline;font-weight: bold;">每年名额有限</span>，若感兴趣，请早做准备提前联系！期待我们一起在科研道路上共同奋战！</p>
+			
+			<p class="p" style="text-align: right;">张意</p>
+			<p class="p" style="text-align: right;">2018.09.01</p>
+		</div>
+	<div class="bottom-divider"></div>
+
+<!--End Member Section-->
+
+</div>
+
+<div class="beianhao">
+	<a href="https://beian.miit.gov.cn/" target="_blank" style="color:#999">蜀ICP备2021013452号-1</a>
+</div>
+ <!-- The JavaScript -->  
+<script type="text/javascript">
+	$(function() {
+		$('#main-menu li a.click-bt').bind('click',function(event){
+			var $anchor = $(this);
+			var idx = $('.click-bt').index(this);
+			console.log(idx);
+			$('div.click-content').eq(idx).siblings().removeClass('show');
+			$('div.click-content').eq(idx).addClass('show');
+			// $('html, body').stop().animate({
+			// 	scrollTop: $($anchor.attr('href')).offset().top
+			// }, 1500,'easeInOutExpo');
+			event.preventDefault();
+		});
+	});
+	
+	$(document).ready(function(){
+		$("a[rel^='prettyPhoto']").prettyPhoto({social_tools:false, deeplinking: false});
+	});
+
+
+
+</script>
+</body>
+
+<!-- <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-28692444-3', 'auto');
+  ga('send', 'pageview');
+</script> -->
+<style>
+	#contact{margin:0px 43px; }
+	#contact .content{overflow:auto;}
+	#contact .p{
+	font-size: 20px;
+	height: auto;
+	line-height: normal;
+	font-family: 'Times New Roman', Times, serif;
+	text-align:justify; text-justify:inter-ideograph;
+}
+</style>
+</html>

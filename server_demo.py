@@ -1,4 +1,5 @@
 import os
+import sys
 import time 
 import socket
 
@@ -9,7 +10,7 @@ from datetime import datetime, timedelta
 
 GMT_FORMAT =  "%a, %d %b %Y %H:%M:%S\n"
 HOST = "127.0.0.1"
-PORT = 65432
+PORT = 1120
 FRESH_WHEN = 20
 print_lock = threading.Lock()
 
@@ -33,7 +34,7 @@ def handler(conn):
         if filename == "":
             filename = "/"
         
-        print("Requesting for {} ----{}".format(hostn+filename))
+        print("Requesting for {}".format(hostn+filename))
 
         content = fetch_file(hostn,filename)
 
@@ -43,10 +44,13 @@ def handler(conn):
             response = 'HTTP/1.0 404 NOT FOUND\n\n File Not Found'.encode()
         
         conn.sendall(response)
-        conn.close()    
+        conn.close()
+        print("\n")    
 
 
-def main():
+def main(argv):
+    FRESH_WHEN = argv[1]
+    print("The time interval to request a conditional get is:{}".format(FRESH_WHEN))
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
         server.bind((HOST,PORT))
         server.listen(5)
@@ -57,8 +61,6 @@ def main():
 
             cthread = threading.Thread(target = handler, args=(conn,))
             cthread.start()
-
-
         s.close()
             
 
@@ -88,7 +90,7 @@ def fetch_file(hostn,filename):
     else:
         # the file is not in cache
         print("Not in cache.Fetching from server...")
-        file_from_server= fetch_from_server(hostn,filename)
+        file_from_server,_= fetch_from_server(hostn,filename)
         if file_from_server:
             save_in_cache(hostn+filename,file_from_server)
             return file_from_server
@@ -111,7 +113,7 @@ def fetch_from_server(hostn,filename,conditionalGet = False,fileTime = 0):
     conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     print(url)
     try:
-        conn.connect((hostn,5678))
+        conn.connect((hostn,80))
         if conditionalGet:
             # request = ("GET "+url+" HTTP/1.1\r\n"+"Host: "+hostn+"\r\n"+"If-Modified-Since:"+" Tue, 07 Jun 2022 21:39:31"+"\r\n"+"Accept:*/*\r\n"+"\r\n").encode()
             request = ("GET "+url+" HTTP/1.1\r\n"+"Host: "+hostn+"\r\n"+"If-Modified-Since:"+time.strftime(GMT_FORMAT,fileTime).replace("\n","")+"\r\n"+"Accept:*/*\r\n"+"\r\n").encode()
@@ -142,10 +144,9 @@ def save_in_cache(filename,content):
     # cached_file.write(time+'\n')
     cached_file.write(content)
     cached_file.close()
-    print('Saving suceed')
+    print("Saving suceed")
                 
 
 
 if __name__ == '__main__':
-    while True:
-        main()
+    main(sys.argv)
