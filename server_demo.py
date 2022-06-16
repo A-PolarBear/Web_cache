@@ -2,23 +2,18 @@ import os
 import sys
 import time 
 import socket
-
-from _thread import *
-import threading
-from http.client import HTTPResponse
 from datetime import datetime, timedelta
 
 GMT_FORMAT =  "%a, %d %b %Y %H:%M:%S\n"
 HOST = "127.0.0.1"
 PORT = 1120
 FRESH_WHEN = 20
-full_response = ""
-lock = threading.Lock()
 
 
 def msg_handler(conn):
         request = conn.recv(4096).decode()
-        # print(request)
+        if not request:
+            return 
 
         # parse the request header from client
         headers = request.split('\n')
@@ -58,20 +53,8 @@ def main(argv):
         while True:
             conn,addr = server.accept()
             print("Connected by {}\n".format(addr))
-
-            cthread = threading.Thread(target = msg_handler, args=(conn,))
-            cthread.start()
+            msg_handler(conn)
         s.close()
-
-def http_parse(msg):
-    temp = msg.split("\r\n\r\n")
-    header = temp[0]
-    data = temp[1]
-    header_list = header.split("\r\n")
-    print(header_list)
-    print(data)
-    return 200,data
-            
 
 def fetch_file(hostn,filename):
     file_from_cache= fetch_from_cache(hostn+filename)
@@ -79,25 +62,25 @@ def fetch_file(hostn,filename):
         last_time = os.path.getmtime("./cache/"+(hostn+filename).replace("/","_").replace("?","_"))
         
         # conditional get 
-        # print("Time diff: {}".format(time.time() - last_time))
+        print("Time diff: {}".format(time.time() - last_time))
         if time.time() - last_time>FRESH_WHEN:
-            # print("File in cache is expired.Fetching from server...")
+            print("File in cache is expired.Fetching from server...")
             file_from_server,modified_flag= fetch_from_server(hostn,filename,conditionalGet=True,fileTime=time.localtime(last_time))
             if file_from_server:
-                # print("File is from server.")
+                print("File is from server.")
                 save_in_cache(hostn+filename,file_from_server)
                 return file_from_server
             elif not modified_flag:
-                # print("File has not been modified, so file is from cache.")
+                print("File has not been modified, so file is from cache.")
                 return file_from_cache
             else:
                 return None
         else:
-            # print("Fetch from cache successfully!")
+            print("Fetch from cache successfully!")
             return file_from_cache
     else:
         # the file is not in cache
-        # print("Not in cache.Fetching from server...")
+        print("Not in cache.Fetching from server...")
         file_from_server,_= fetch_from_server(hostn,filename)
         if file_from_server:
             save_in_cache(hostn+filename,file_from_server)
@@ -122,6 +105,7 @@ def fetch_from_server(hostn,filename,conditionalGet = False,fileTime = 0):
     # print(url)
     try:
         conn.connect((hostn,80))
+        print(conditionalGet)
         if conditionalGet:
             # request = ("GET "+url+" HTTP/1.1\r\n"+"Host: "+hostn+"\r\n"+"If-Modified-Since:"+" Tue, 07 Jun 2022 21:39:31"+"\r\n"+"Accept:*/*\r\n"+"\r\n").encode()
             request = ("GET "+url+" HTTP/1.1\r\n"+"Host: "+hostn+"\r\n"+"If-Modified-Since:"+time.strftime(GMT_FORMAT,fileTime).replace("\n","")+"\r\n"+"Accept:*/*\r\n"+"\r\n").encode()
@@ -130,13 +114,21 @@ def fetch_from_server(hostn,filename,conditionalGet = False,fileTime = 0):
         # response = conn.makefile('rb')
         # print(request)
         conn.send(request)
-        response = HTTPResponse(conn)
-        response.begin()
+        response = b''
+        data = b''
+        while True:
+            tmp = conn.recv(4096)
+            if len(tmp) == 0 :
+                break
+            response+= tmp
+        conn.close()
+        # response.begin(
         # print(response.getheaders())
-        # print(status)
-        if response.status == 200:
-            return response.encode(),True
-        elif response.status == 304:
+        status = int(response.split(b'\r\n')[0].split(b' ')[1])
+        if status == 200:
+            data = response.split(b"\r\n\r\n",1)[1]
+            return data,True
+        elif status == 304:
             return None,False
         else:
             return None,True
@@ -146,13 +138,12 @@ def fetch_from_server(hostn,filename,conditionalGet = False,fileTime = 0):
 
 
 def save_in_cache(filename,content):
-    # print('Saving a copy of {} in the cache'.format(filename))
+    print('Saving a copy of {} in the cache'.format(filename))
     tar = filename.replace(':','_').replace('/','_').replace("?","_")
     cached_file = open('./cache/' + tar, 'wb')
-    # cached_file.write(time+'\n')
     cached_file.write(content)
     cached_file.close()
-    # print("Saving suceed")
+    print("Saving suceed")
                 
 
 
