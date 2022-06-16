@@ -12,10 +12,11 @@ GMT_FORMAT =  "%a, %d %b %Y %H:%M:%S\n"
 HOST = "127.0.0.1"
 PORT = 1120
 FRESH_WHEN = 20
-print_lock = threading.Lock()
+full_response = ""
+lock = threading.Lock()
 
 
-def handler(conn):
+def msg_handler(conn):
         request = conn.recv(4096).decode()
         # print(request)
 
@@ -28,13 +29,13 @@ def handler(conn):
         hostn = dest.split('/')[1]
         # print("host",hostn)
         
-        #pathname
+        # pathname
         filename = dest[dest.find(hostn,1)+len(hostn):]
 
         if filename == "":
             filename = "/"
         
-        print("Requesting for {}".format(hostn+filename))
+        # print("Requesting for {}".format(hostn+filename))
 
         content = fetch_file(hostn,filename)
 
@@ -44,8 +45,7 @@ def handler(conn):
             response = 'HTTP/1.0 404 NOT FOUND\n\n File Not Found'.encode()
         
         conn.sendall(response)
-        conn.close()
-        print("\n")    
+        conn.close()   
 
 
 def main(argv):
@@ -57,39 +57,47 @@ def main(argv):
         print("Server is listening...")
         while True:
             conn,addr = server.accept()
-            print("Connected by {}".format(addr))
+            print("Connected by {}\n".format(addr))
 
-            cthread = threading.Thread(target = handler, args=(conn,))
+            cthread = threading.Thread(target = msg_handler, args=(conn,))
             cthread.start()
         s.close()
+
+def http_parse(msg):
+    temp = msg.split("\r\n\r\n")
+    header = temp[0]
+    data = temp[1]
+    header_list = header.split("\r\n")
+    print(header_list)
+    print(data)
+    return 200,data
             
 
 def fetch_file(hostn,filename):
     file_from_cache= fetch_from_cache(hostn+filename)
     if file_from_cache:
         last_time = os.path.getmtime("./cache/"+(hostn+filename).replace("/","_").replace("?","_"))
-        fileTime = time.localtime(last_time)
+        
         # conditional get 
-        print("Time diff: {}".format(time.time() - last_time))
+        # print("Time diff: {}".format(time.time() - last_time))
         if time.time() - last_time>FRESH_WHEN:
-            flag = 1
-            print("File in cache is expired.Fetching from server...")
-            file_from_server,modifiedFlag= fetch_from_server(hostn,filename,flag,fileTime)
+            # print("File in cache is expired.Fetching from server...")
+            file_from_server,modified_flag= fetch_from_server(hostn,filename,conditionalGet=True,fileTime=time.localtime(last_time))
             if file_from_server:
-                print("File is from server.")
+                # print("File is from server.")
                 save_in_cache(hostn+filename,file_from_server)
                 return file_from_server
-            elif not modifiedFlag:
-                print("File has not been modified, so file is from cache.")
+            elif not modified_flag:
+                # print("File has not been modified, so file is from cache.")
                 return file_from_cache
             else:
                 return None
         else:
-            print("Fetch from cache successfully!")
+            # print("Fetch from cache successfully!")
             return file_from_cache
     else:
         # the file is not in cache
-        print("Not in cache.Fetching from server...")
+        # print("Not in cache.Fetching from server...")
         file_from_server,_= fetch_from_server(hostn,filename)
         if file_from_server:
             save_in_cache(hostn+filename,file_from_server)
@@ -111,7 +119,7 @@ def fetch_from_cache(filename):
 def fetch_from_server(hostn,filename,conditionalGet = False,fileTime = 0):
     url = filename
     conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    print(url)
+    # print(url)
     try:
         conn.connect((hostn,80))
         if conditionalGet:
@@ -125,9 +133,9 @@ def fetch_from_server(hostn,filename,conditionalGet = False,fileTime = 0):
         response = HTTPResponse(conn)
         response.begin()
         # print(response.getheaders())
-        print(response.status)
+        # print(status)
         if response.status == 200:
-            return response.read(),True
+            return response.encode(),True
         elif response.status == 304:
             return None,False
         else:
@@ -138,13 +146,13 @@ def fetch_from_server(hostn,filename,conditionalGet = False,fileTime = 0):
 
 
 def save_in_cache(filename,content):
-    print('Saving a copy of {} in the cache'.format(filename))
+    # print('Saving a copy of {} in the cache'.format(filename))
     tar = filename.replace(':','_').replace('/','_').replace("?","_")
     cached_file = open('./cache/' + tar, 'wb')
     # cached_file.write(time+'\n')
     cached_file.write(content)
     cached_file.close()
-    print("Saving suceed")
+    # print("Saving suceed")
                 
 
 
